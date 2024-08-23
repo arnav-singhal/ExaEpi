@@ -129,9 +129,9 @@ void writePlotFile (const AgentContainer& pc, /*!< Agent (particle) container */
             real_varnames.push_back("treatment_timer"); write_real_comp.push_back(1);
             real_varnames.push_back("disease_counter"); write_real_comp.push_back(1);
             real_varnames.push_back("infection_prob"); write_real_comp.push_back(1);
-            real_varnames.push_back("incubation_period"); write_real_comp.push_back(static_cast<int>(step==0));
-            real_varnames.push_back("infectious_period"); write_real_comp.push_back(static_cast<int>(step==0));
-            real_varnames.push_back("symptomdev_period"); write_real_comp.push_back(static_cast<int>(step==0));
+            real_varnames.push_back("incubation_period"); write_real_comp.push_back(1);
+            real_varnames.push_back("infectious_period"); write_real_comp.push_back(1);
+            real_varnames.push_back("symptomdev_period"); write_real_comp.push_back(1);
             int_varnames.push_back ("status"); write_int_comp.push_back(1);
             int_varnames.push_back ("strain"); write_int_comp.push_back(static_cast<int>(step==0));
             int_varnames.push_back ("symptomatic"); write_int_comp.push_back(1);

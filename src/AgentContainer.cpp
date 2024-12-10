@@ -63,8 +63,15 @@ AgentContainer::AgentContainer (const amrex::Geometry            & a_geom,  /*!<
         amrex::ParmParse pp("agent");
         pp.query("shelter_compliance", m_shelter_compliance);
         pp.query("symptomatic_withdraw_compliance", m_symptomatic_withdraw_compliance);
-        queryArray(pp, "student_teacher_ratio", m_student_teacher_ratio, SchoolType::total);
+        int stratio[SchoolType::total];
+        for (unsigned int i = 0; i < SchoolType::total; i++) {
+            stratio[i] = m_student_teacher_ratio[i];
+        }
 
+        queryArray(pp, "student_teacher_ratio", stratio, SchoolType::total);
+        for (unsigned int i = 0; i < SchoolType::total; ++i) {
+            m_student_teacher_ratio[i] = stratio[i];
+        }
     }
 
     {
